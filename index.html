@@ -8,6 +8,7 @@
     <title>Sarthi</title>
     </head>
 
+
     <body>
         
         <div class= "header"> 
@@ -22,14 +23,20 @@
             
             </ul>
         </div>
+       
+       
         <div class="login">
             <form action="logdata.php" method="post" name="Login Form" >
             Login: <input type="text" placeholder="Enter username: " name="login" required><br>
             Password: <input type="password" placeholder="Enter password: " name="pass" required><br>
             <input type="submit" name="Submit" value="Login">
-
+           
             </form>
         </div>
+        <?php if (isset($error_message)): ?>
+        <p class="error"><?php echo $error_message; ?></p>
+        <?php elseif (isset($success_message)): ?>
+        <p class="success"><?php echo $success_message; ?></p>
 
     </body>
     
